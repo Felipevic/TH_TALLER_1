@@ -73,10 +73,10 @@ La siguiente tabla muestra los \% finales obtenidos para la ponderación de cada
 
 \begin{table}[H]
 \centering
-\caption{Ponderaciones finales de los áridos.}
+\caption{Ponderaciones finales de los áridos utilizando método de Banda.}
 \begin{tabular}{|l|c|}
 \hline
-\textbf{Material / Control} & \textbf{Ponderación Final (\%)} \\ \hline
+\textbf{Material} & \textbf{Ponderación Final (\%)} \\ \hline
 Grava 1     & 0 \\ \hline
 Gravilla 2  & 7 \\ \hline
 Arena 3     & 93 \\ \hline
@@ -105,3 +105,69 @@ Arena 3 & 1777,46 & 105,38 & 1756,38 & 1861,77 \\ \hline
 \end{tabular}
 \label{tab:ejemplo}
 \end{table}
+
+\vspace{1cm}
+\subsection{Fuller - Thompson}
+
+En esta sección se realizó una nueva optimización granulométrica utilizando el método de Fuller-Thomposon. Esta curva sigue una distribución de potencia, como se expresa a continuación:
+
+\begin{equation}
+    P(D) = 100 \times (\frac{D}{D_{max}})^n
+\end{equation}
+
+Donde $P(D)$ es el \% que pasa por el tamiz de diámetro $D$, $D_{max}$ es el tamaño máximo del árido (TMA) y $n$ es el exponente que define la forma de la curva, el cual, según Fuller, tiene un valor de 0,45 para hormigones.
+
+El objetivo es lograr que la curva de los áridos combinados con los \% optimizados sea lo más parecida a la curva sugerida por el método Fuller - Thompson, minimizando su diferencia. La curva sugerida se obtiene reemplazando la dosificación sugerida por la NCH 163 en la fórmula anterior.  
+
+A continuación se muestran los resultados obtenidos.
+
+\begin{table}[H]
+\centering
+\caption{Ponderaciones finales de los áridos utilizando Fuller-Thompson.}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Material} & \textbf{Ponderación Final (\%)} \\ \hline
+Grava 1     & 0 \\ \hline
+Gravilla 2  & 5 \\ \hline
+Arena 3     & 95 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GRAFICOS/fuller_thompson.png}
+    \caption{Curva granulométrica optimizada comparada con la curva Fuller-Thompson.}
+\end{figure}
+
+Se puede analizar que los resultados son similares a los obtenidos por el método de Banda, donde hay nula presencia de gravas y un alto porcentaje de arena. Además, se puede observar que la diferencia de cada punto de la curva optimizada con la sugerida es mínima.
+
+Posteriormente, se obtuvieron las masas requeridas de agua, cemento y agregados corregidas, utilizando las condiciones y requerimientos iniciales.
+
+\begin{table}[H]
+\centering
+\caption{Dosificación final corregida por humedad.}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Material} & 
+\textbf{Dosificación SSS (kg/m$^3$)} & 
+\textbf{Agua interna (kg)} & 
+\textbf{Peso seco (kg)} & 
+\textbf{Dosificación Húmedos (kg/m$^3$)} \\ \hline
+
+Cemento   & 334,56 & -      & -       & 334,56 \\ \hline
+Agua de amasado & 177,98 & -      & - & 86,10 \\ \hline
+Grava 1   & 0,00   & 0,00   & 0,00   & 0,00 \\ \hline
+Gravilla 2 & 86,74  & 6,86   & 85,71  & 92,57 \\ \hline
+Arena 3   & 1814,34 & 107,57 & 1792,83 & 1900,40 \\ \hline
+\end{tabular}
+\end{table}
+
+
+FALTA UN POCO MAS DE ANÁLISIS EN CADA PARTE
+
+
+
+
+
+
+
