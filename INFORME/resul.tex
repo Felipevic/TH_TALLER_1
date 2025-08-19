@@ -67,7 +67,25 @@ Posteriormente, en base a la norma, se graficaron las curvas asociadas al Dm 10m
     \caption{Curva de granulometría sugerida para Dm 10mm.}
 \end{figure}
 
-Una vez obtenida la curva sugerida, se procede a la optimización granulométrica en base a la norma. Este proceso consistió en interpolar los \% pasantes combinados de nuestra mezcla a los tamices indicados en la norma para poder compararlos. Finalmente, se realizó una iteración con la función objetivo de Excel para poder llevar la curva combinada a la sugerida, la cual varía los \% de cada árido hasta que la diferencia entre ambas curvas sea igual a 0, lo que da como resultado la curva optimizada.
+Una vez obtenida la curva sugerida, se procede a la optimización granulométrica en base a la norma. Este proceso consistió en interpolar los \% pasantes combinados de nuestra mezcla a los tamices indicados en la norma para poder compararlos. Finalmente, se realizó una iteración con la función objetivo de Excel para poder llevar la curva combinada a la sugerida, la cual varía los \% de cada árido hasta que la diferencia entre ambas curvas sea igual a 0, manteniendo las condiciones y requerimientos iniciales, dando como resultado la curva optimizada.
+\\\\
+Además, dadas las condiciones iniciales, las condiciones de ejecución en obra, el elemento a hormigonar, el tipo de hormigón y la clase de exposición en obra, se procedió a obtener el contenido de agua y cemento necesario para poder calcular el factor K, el cual corresponde a la masa total de áridos en estado SSS. Con estos datos, se pudo reemplazar en la ecuación de balance de volumen y obtener las proporciones finales de cada árido a utilizar en la mezcla optimizada.
+
+\begin{table}[H]
+\centering
+\caption{Factor K y masas de agregados - TMA}
+\label{tab:factor_k_tma}
+\begin{tabular}{|l|r|c|}
+\hline
+\textbf{Volumen} & \textbf{1} & \textbf{m$^{3}$} \\ \hline
+w          & 177,98     & kg/m$^{3}$ \\ \hline
+c          & 286,14  & kg/m$^{3}$ \\ \hline
+K          & 1942,28  & kg/m$^{3}$ \\ \hline
+Grava 1    & 504,38  & kg/m$^{3}$ \\ \hline
+Gravilla 2 & 481,04  & kg/m$^{3}$ \\ \hline
+Arena 3    & 956,85  & kg/m$^{3}$ \\ \hline
+\end{tabular}
+\end{table}
 
 La siguiente tabla muestra los \% finales obtenidos para la ponderación de cada árido y la figura muestra la curva optmizada comparada con la curva sugerida. Se puede notar que la diferencia entre ambas esta minimizada.
 
@@ -77,36 +95,93 @@ La siguiente tabla muestra los \% finales obtenidos para la ponderación de cada
 \begin{tabular}{|l|c|}
 \hline
 \textbf{Material} & \textbf{Ponderación Final (\%)} \\ \hline
-Grava 1     & 0 \\ \hline
-Gravilla 2  & 7 \\ \hline
-Arena 3     & 93 \\ \hline
+Grava 1     & 25,97 \\ \hline
+Gravilla 2  & 24,77 \\ \hline
+Arena 3     & 49,26 \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{GRAFICOS/opti_banda.png}
-    \caption{Curva granulométrica optimizada comparada con la curva sugerida.}
+    \caption{Curva granulométrica optimizada comparada con la curva sugerida TMA.}
 \end{figure}
 
-Dadas las condiciones iniciales, las condiciones de ejecución en obra, el elemento a hormigonar, el tipo de hormigón y la clase de exposición en obra, se llegó a una dosificación casi en su totalidad compuesta por arena, con un pequeño porcentaje de gravilla, destacando la nula presencia de grava. Además, se obtuvieron las proporciones de los otros compuestos como cemento y agua con sus respectivas correcciones por humedad. La siguiente tabla muestra los resultados finales.
+Finalmente, obtenidas las proporciones finales de cada árido y la granulometría optimizada, se corrigió cada cantidad por humedad y rendimiento, obtuviendo los siguientes resultados.
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Corrección por humedad (TMA = 9{,}5 mm).}
+\label{tab:correccion-humedad}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} c c c c c c @{}} % columnas centradas y sin padding lateral
+\toprule
+\textbf{Material} &
+\textbf{SSS (kg/m$^{3}$)} &
+\textbf{Agua absorción (kg/m$^{3}$)} &
+\textbf{Peso seco (kg/m$^{3}$)} &
+\textbf{Agua total (kg/m$^{3}$)} &
+\textbf{Áridos húmedos (kg/m$^{3}$)} \\
+\midrule
+Cemento                 & 286,14 & --    & --     & --    & 286,14 \\
+Agua de amasado         & 177,98 & --    & --     & --    & 86,83  \\
+Agua de abs.\ de áridos & --     & 23,52 & --     & -23,52& --     \\
+\midrule
+Grava 1                 & 504,38 & -6,47 & 497,91 & 19,92 & 517,82 \\
+Gravilla 2              & 481,04 & -5,70 & 475,34 & 38,03 & 513,36 \\
+Arena 3                 & 956,86 & -11,35& 945,51 & 56,73 & 1002,24\\
+\midrule
+\textbf{Peso hormigón (kg)} & \textbf{2406,41} &  &  &  & \textbf{2406,41} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
 
 \begin{table}[H]
 \centering
-\caption{Dosificación final con factores corregidos.}
-\begin{tabular}{|c|c|c|c|c|} % Centrado vertical y horizontal en cada celda
-\hline
-\textbf{Material} & \textbf{Dosificación SSS $(kg/m^3)$} & \textbf{Agua interna $(kg)$} & \textbf{Peso seco $(kg)$} & \textbf{Dosificación Húmedos $(kg/m^3)$} \\ \hline
-Cemento & 334,55 & - & - & 334,55 \\ \hline
-Agua amasado & 177,98 & - & - & 85,27 \\ \hline
-Grava 1 & 0 & 0 & 0 & 0 \\ \hline
-Gravilla 2 & 124,98 & 9,88 & 123,05 & 133,38 \\ \hline
-Arena 3 & 1777,46 & 105,38 & 1756,38 & 1861,77 \\ \hline
+\caption{Rendimiento de mezcla y factor de densidad}
+\label{tab:rend-y-factor}
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{subtable}[t]{0.38\textwidth}
+\centering
+\caption{Densidades}
+\label{tab:factor-rendimiento}
+\begin{tabular}{lr}
+\toprule
+\textbf{Concepto} & \textbf{Valor} \\
+\midrule
+Densidad teórica & 2406,41 \\
+Densidad real    & 2350 \\
+Factor de densidad          & 0,97656 \\
+\bottomrule
 \end{tabular}
-\label{tab:ejemplo}
+\end{subtable}
+\begin{subtable}[t]{0.58\textwidth}
+\centering
+\caption{Corrección por Rendimiento}
+\label{tab:rendimiento}
+\begin{tabular}{lrrr}
+\toprule
+ & \textbf{Teórico} & \textbf{Real} & \textbf{Corregida} \\
+\midrule
+Cemento   & 286,14 & 279,44 & 286,14 \\
+Agua      & 86,83 & 84,80 & 86,83 \\
+Agregados & 2033,43 & 1985,76 & 1977,02 \\
+Densidad  & 2406,41 & 2350 & 2350 \\
+\bottomrule
+\end{tabular}
+\end{subtable}
+
 \end{table}
 
-\vspace{1cm}
+
 \subsection{Fuller - Thompson}
 
 En esta sección se realizó una nueva optimización granulométrica utilizando el método de Fuller-Thomposon. Esta curva sigue una distribución de potencia, como se expresa a continuación:
@@ -127,9 +202,9 @@ A continuación se muestran los resultados obtenidos.
 \begin{tabular}{|l|c|}
 \hline
 \textbf{Material} & \textbf{Ponderación Final (\%)} \\ \hline
-Grava 1     & 0 \\ \hline
-Gravilla 2  & 5 \\ \hline
-Arena 3     & 95 \\ \hline
+Grava 1     & 28,52 \\ \hline
+Gravilla 2  & 23,07 \\ \hline
+Arena 3     & 48,42 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -139,35 +214,127 @@ Arena 3     & 95 \\ \hline
     \caption{Curva granulométrica optimizada comparada con la curva Fuller-Thompson.}
 \end{figure}
 
-Se puede analizar que los resultados son similares a los obtenidos por el método de Banda, donde hay nula presencia de gravas y un alto porcentaje de arena. Además, se puede observar que la diferencia de cada punto de la curva optimizada con la sugerida es mínima.
+Se puede analizar que los resultados son similares a los obtenidos por el método de Banda, donde hay una cantidad similar de grava y gravilla con una dosis considerable de arena. Además, se puede observar que la diferencia de cada punto de la curva optimizada con la sugerida también es mínima. Las diferencias notorias se pueden ver más adelante, en el análisis de la curva Tarántula. 
 
 Posteriormente, se obtuvieron las masas requeridas de agua, cemento y agregados corregidas, utilizando las condiciones y requerimientos iniciales.
 
 \begin{table}[H]
 \centering
-\caption{Dosificación final corregida por humedad.}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Material} & 
-\textbf{Dosificación SSS (kg/m$^3$)} & 
-\textbf{Agua interna (kg)} & 
-\textbf{Peso seco (kg)} & 
-\textbf{Dosificación Húmedos (kg/m$^3$)} \\ \hline
+\captionsetup{justification=centering}
+\caption{Corrección por humedad — Fuller - Thompson.}
+\label{tab:correccion-humedad-thomson}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} l r r r r r @{}} % l + 5 numéricas
+\toprule
+\textbf{Material} & \textbf{SSS (kg/m$^{3}$)} & \textbf{Agua absorción (kg/m$^{3}$)} &
+\textbf{Peso seco (kg/m$^{3}$)} & \textbf{Agua total (kg/m$^{3}$)} &
+\textbf{Áridos húmedos (kg/m$^{3}$)} \\
+\midrule
+Cemento                 & 286,14 & --            & --       & --        & 286,14 \\
+Agua de amasado         & 177,98    & --            & --       & -23,53& 88,65 \\
+Agua de abs.\ de áridos & --          & 23,53     & --       & -112,86 & -- \\
+\midrule
+Grava 1                 & 552,97 & -7,10  & 545,87 & 21,83   & 567,71 \\
+Gravilla 2              & 447,36 & -5,30  & 442,05 & 35,36   & 477,42 \\
+Arena 3                 & 938,88 & -11,13 & 927,75 & 55,67   & 983,41 \\
+\midrule
+\textbf{Peso hormigón (kg)} & \textbf{2403,34} &  &  &  & \textbf{2403,34} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
 
-Cemento   & 334,56 & -      & -       & 334,56 \\ \hline
-Agua de amasado & 177,98 & -      & - & 86,10 \\ \hline
-Grava 1   & 0,00   & 0,00   & 0,00   & 0,00 \\ \hline
-Gravilla 2 & 86,74  & 6,86   & 85,71  & 92,57 \\ \hline
-Arena 3   & 1814,34 & 107,57 & 1792,83 & 1900,40 \\ \hline
+\begin{table}[H]
+\centering
+\caption{Rendimiento (Thomson) y factor de densidad}
+\label{tab:rendimiento-factor-thomson}
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{subtable}[t]{0.58\textwidth}
+\centering
+\caption{Rendimiento (Thomson)}
+\begin{tabular}{lrrr}
+\toprule
+ & \textbf{Teórico} & \textbf{Real} & \textbf{Corregida} \\
+\midrule
+Cemento   & 286,14 & 279,79 & 286,14 \\
+Agua      & 88,65 & 86,69 & 88,65 \\
+Agregados & 2028,54 & 1983,52 & 1975,20 \\
+Densidad  & 2403,34 & 2350 & 2350 \\
+\bottomrule
+\end{tabular}
+\end{subtable}
+\hfill
+\begin{subtable}[t]{0.38\textwidth}
+\centering
+\caption{Densidades y factor}
+\begin{tabular}{lr}
+\toprule
+\textbf{Concepto} & \textbf{Valor} \\
+\midrule
+Densidad teórica & 2403,33 \\
+Densidad real    & 2350 \\
+Factor           & 0,9778 \\
+\bottomrule
+\end{tabular}
+\end{subtable}
+
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Factor K - Fuller - Thompson}
+\label{tab:factor-k-thomson}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\begin{tabular}{|l|r|c|}
+\hline
+\textbf{Volumen} & \textbf{1} & \textbf{m$^{3}$} \\ \hline
+w          & 177,98     & kg/m$^{3}$ \\ \hline
+c          & 286,15  & kg/m$^{3}$ \\ \hline
+K          & 1939,21  & kg/m$^{3}$ \\ \hline
+Grava 1    & 552,97  & kg/m$^{3}$ \\ \hline
+Gravilla 2 & 447,36  & kg/m$^{3}$ \\ \hline
+Arena 3    & 938,88  & kg/m$^{3}$ \\ \hline
 \end{tabular}
 \end{table}
 
+\subsection{Curva Tarántula}
 
-FALTA UN POCO MAS DE ANÁLISIS EN CADA PARTE
+En esta sección se analizarán los resultados obtenidos utilizando el método de la curva Tarántula para evaluar su trabajabilidad. Es importante mencionar que las porporciones finales de cada árido en cada método de optimización fueron ajustadas para que cumplan las condiciones de la curva Tarántula.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GRAFICOS/tarantula.png}
+    \caption{Curva Tarántula optimizada.}
+\end{figure}
 
 
+El gráfico compara los límites de la Curva Tarántula (superior e inferior) con las curvas combinadas de los diseños TMA y Thompson para TMA = \(9{,}5\) mm. En conjunto, ambas mezclas se mantienen dentro del sobre acotado en todo el rango de tamices, lo que es indicio de buena trabajabilidad, estabilidad y óptimo para la construcción.
+
+En la fracción de finos \((<0{,}3~\mathrm{mm})\), las curvas se sitúan por encima del límite inferior y abajo del límite superior. Esto evita el déficit de finos, que se manifiesta como textura áspera, falta de cohesión y sangrado, y, a la vez, reduce el riesgo de pegajosidad y exudación asociado a un exceso de partículas muy finas. La distribución observada en esta zona favorece una pasta trabajable.
+
+En el rango de arena gruesa \((0{,}6\text{–}2{,}36~\mathrm{mm})\) se aprecia un máximo controlado alrededor de \(1\text{–}2~\mathrm{mm}\), siempre por debajo del límite superior. Esta proporción es deseable porque promueve el deslizamiento entre partículas, estabiliza el asentamiento y contribuye a una respuesta reológica predecible en estado fresco.
+
+Los áridos gruesos \((2{,}36\text{–}4{,}75~\mathrm{mm})\) mantienen una continuidad granulométrica dentro de la Tarántula. La cercanía de las curvas a dicho centro sugiere una buena distribución granular, con baja probabilidad de vacíos intermedios.
+
+La fracción gruesa \((\ge 9{,}5~\mathrm{mm})\) se mantiene baja, coherente con el TMA de \(3/8''\) y con una dosificación dominada por arena y gravilla fina. Esto explica la compatibilidad general con la Curva Tarántula. Al limitar el tamaño máximo, se reduce la exigencia de pasta para envolver partículas grandes y se mejora la movilidad del hormigón.
+
+Al comparar los diseños, la curva Thomson resulta levemente más fina por debajo de \(1\text{–}1{,}18~\mathrm{mm}\) y muy similar a TMA entre \(2{,}36\) y \(4{,}75~\mathrm{mm}\). La diferencia en la zona de finos es consistente con un empaque algo más suave y con los ajustes por humedad y rendimiento aplicados durante la dosificación. Por su parte, la curva TMA se mantiene próxima a Thomson dentro del sobre acotado; por ello, ambas alternativas son técnicamente válidas y la selección final puede fundarse en la disponibilidad de áridos, la respuesta observada en mezcla de prueba y los requisitos de puesta en obra.
+
+Desde el punto de vista reológico, el cumplimiento sistemático del sobre acotado sugiere mezclas cohesivas, estables y bombeables. El pico controlado en \(0{,}6\text{–}2{,}36~\mathrm{mm}\) favorece la retención del asentamiento y el empleo eficiente de aditivo reductor de agua, sin necesidad de incrementar la fracción de finos más allá de lo recomendable.
+
+En caso de ser necesario un ajuste fino en obra, se propone actuar de manera dirigida sobre los intervalos granulométricos críticos. Si la mezcla se percibe pegajosa, conviene trasladar entre 1 y 2 puntos porcentuales desde \(<0{,}3~\mathrm{mm}\) hacia \(0{,}6\text{–}1{,}18~\mathrm{mm}\) o \(1{,}18\text{–}2{,}36~\mathrm{mm}\). Por el contrario, si se detecta pérdida de cohesión o sangrado, es preferible añadir aproximadamente 1 punto porcentual a \(<0{,}3~\mathrm{mm}\) retirándolo de \(2{,}36\text{–}4{,}75~\mathrm{mm}\). Tras cada intervención, debe verificarse nuevamente el cumplimiento del sobre acotado de la Curva Tarántula para asegurar que la mezcla permanezca dentro de los márgenes establecidos.
+
+En síntesis, las curvas combinadas TMA y Thomson cumplen la Curva Tarántula en todo el espectro de tamices, con desempeño especialmente favorable en \(0{,}6\text{–}2{,}36~\mathrm{mm}\). Estos resultados respaldan la viabilidad reológica y la aptitud de bombeo del diseño con TMA \(3/8''\), a la vez que reducen el riesgo de segregación y exudación en las condiciones de ejecución previstas.
 
 
-
+REVISAR
 
 

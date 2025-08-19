@@ -83,6 +83,9 @@
 \usepackage{parskip}    % Espaciado entre párrafos.
 \usepackage{ragged2e}   % Justificación mejorada.
 \usepackage{multicol}
+\usepackage{multirow}   % Para multirow
+\usepackage{float}      % Para la opción [H] en las tablas/figuras
+
 
 % Configuración de secciones y encabezados
 \usepackage{titlesec}
@@ -102,7 +105,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\raisebox{0.20cm}{\textbf{Finite Elements - IOC5107}}}
+\fancyhead[L]{\raisebox{0.20cm}{\textbf{Tecnología del Hormigón}}}
 \fancyhead[R]{\raisebox{0.1cm}{\includegraphics[width=0.25\linewidth]{LOGO_UNIVERSIDAD.jpg}}}
 \fancyhead[C]{\rule{\textwidth}{0.6pt}}
 \fancyfoot[C]{\rule{\textwidth}{0.6pt}}
@@ -137,7 +140,7 @@
 %	SECCION DEL TITULO
 %----------------------------------------------------------------------------------------
 \HRule \\[0.4cm]
-{ \huge \bfseries Tecnologias del Hormigon}\\[0.4cm] % Titulo del documento
+{ \huge \bfseries Tecnología del Hormigón}\\[0.4cm] % Titulo del documento
 { \huge \bfseries Taller 1}\\[0.4cm] % Titulo del documento
 \HRule \\[1.5cm]
  \vspace{5cm}
@@ -188,5 +191,7 @@
 \include{intro}
 
 \include{resul}
+
+\include{anexo}
 
 \end{document}
