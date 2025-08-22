@@ -27,14 +27,7 @@
 \usepackage{tikz}        % Creación de gráficos vectoriales.
 
 % Configuración de enlaces y referencias cruzadas
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks   = true,
-    linkcolor    = darkblue,
-    citecolor    = black,
-    filecolor    = blue,
-    urlcolor     = blue
-}
+
 
 \usepackage{media9} % Permite la inserción de multimedia.
 
@@ -122,7 +115,14 @@
 
 % Configuracion de bibliografia
 \usepackage{natbib}
-\bibliographystyle{unsrtnat}  % Puedes cambiarlo por `unsrtnat`, `abbrvnat`, etc.
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks   = true,
+    linkcolor    = darkblue,
+    citecolor    = black,
+    filecolor    = blue,
+    urlcolor     = blue
+}
 
 \begin{document}
 %----------------------------------------------------------------------------------------
@@ -182,7 +182,6 @@
 %\listoffigures 
 %\thispagestyle{plain} % Deshabilita el encabezado en la página del índice %
 %\thispagestyle{empty}
-\newpage
 %----------------------------------------------------------------------------------------
 %ACÁ EMPIEZA EL INFORME
 \setcounter{page}{1}
@@ -196,7 +195,7 @@
 
 \include{anexo}
 
-\bibliographystyle{plainnat}  % Estilo de la bibliografía (puedes cambiarlo a otro si prefieres)
+\bibliographystyle{unsrtnat}  % o plainnat
 \bibliography{ref}  % Nombre del archivo .bib
 
 \end{document}
