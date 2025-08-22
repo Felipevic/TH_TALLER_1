@@ -88,3 +88,188 @@
 \textbf{TOTAL}  &     & 1000& 100\%& -     \\ \hline
 \end{tabular}
 \end{table}
+
+\subsection{Tablas de especificaciones ACI 211.1 y ACI 318}
+
+\begin{table}[H]
+\centering
+\caption{Rangos típicos de asentamiento sin aditivos reductores de agua.}
+\label{tab:rangos-asentamiento}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} c l @{}} % dos columnas
+\toprule
+\textbf{Rango de slump (in)} & \textbf{Tipo de construcción} \\
+\midrule
+1--4 & Slipformed \\
+2--4 & Mass concrete \\
+2--5 & Pavimentos, losas, fundaciones simples y armadas, muros de subestructura \\
+3--5 & Vigas, muros armados y columnas \\
+\bottomrule
+\end{tabular}%
+}
+\\Fuente: ACI 211.1-22.
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Contenido aproximado de agua de amasado y aire según TMA y \textit{slump}.}
+\label{tab:contenido-agua-aire}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} c c c c c c c c @{}} % ocho columnas
+\toprule
+\textbf{Slump (in)} & \textbf{3/8''} & \textbf{1/2''} & \textbf{3/4''} & \textbf{1''} & \textbf{1-1/2''} & \textbf{2''} & \textbf{3''} \\
+\midrule
+\multicolumn{8}{c}{\textbf{Hormigón sin aire incorporado (lb/yd$^3$)}} \\
+\midrule
+1--2 & 350 & 335 & 315 & 305 & 275 & 260 & 220 \\
+3--4 & 385 & 365 & 340 & 325 & 300 & 285 & 250 \\
+5--6 & 410 & 375 & 350 & 340 & 320 & 295 & 255 \\
+6--7 & 430 & 385 & 360 & 340 & 330 & 300 & 270 \\
+\midrule
+\multicolumn{8}{c}{\textbf{Hormigón con aire incorporado (lb/yd$^3$)}} \\
+\midrule
+1--2 & 305 & 295 & 280 & 270 & 240 & 230 & 205 \\
+3--4 & 340 & 325 & 305 & 295 & 275 & 265 & 225 \\
+5--6 & 355 & 335 & 315 & 300 & 280 & 270 & 240 \\
+6--7 & 365 & 340 & 315 & 310 & 280 & 280 & 250 \\
+\bottomrule
+\end{tabular}%
+}
+\\Aire atrapado (no aireado): 3\%, 2.5\%, 2\%, 1.5\%, 1\%, 0.5\%, 0.3\% (según TMA). \\
+Requerido aire total: F1 = 6\%, F2/F3 = 7.5\%. \\
+Fuente: ACI 211.1-22.
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Valores de $t$ según probabilidad de defectuosos.}
+\label{tab:valores-t}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} c c @{}} 
+\toprule
+\textbf{Probabilidad de defectuosos (\%)} & \textbf{$t$} \\
+\midrule
+1   & 2.33 \\
+2.5 & 1.96 \\
+5   & \textbf{1.645} \\
+10  & 1.282 \\
+20  & 0.842 \\
+\bottomrule
+\end{tabular}%
+}
+\\Fuente: ACI 318.
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Condiciones de obra y desviación estándar $s$ (MPa).}
+\label{tab:condiciones-obra}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} c c c l @{}} 
+\toprule
+\textbf{Condiciones} & \textbf{$s \leq H15$} & \textbf{$s > H15$} & \textbf{Definición} \\
+\midrule
+Regulares   & 8.0 & --- & Control deficiente, solo grado $\leq$ H15 \\
+Medias      & 6.0 & 7.0 & Dosificación de volumen controlado; control esporádico \\
+Buenas      & 4.0 & 5.0 & Dosificación en peso o volumen controlado; control permanente \\
+Muy buenas  & 3.0 & 4.0 & Dosificación en peso; laboratorio en faena; control permanente \\
+\bottomrule
+\end{tabular}%
+}
+\\Fuente: ACI 318.
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Rangos recomendados de asentamiento según tipo de construcción (mm).}
+\label{tab:rangos-asentamiento-mm}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} l c c @{}} 
+\toprule
+\textbf{Tipo de construcción} & \textbf{Slump máx. (mm)} & \textbf{Slump mín. (mm)} \\
+\midrule
+Fundaciones y muros armados                    & 75  & 25 \\
+Fundaciones simples, cajones, muros subterráneos & 75  & 25 \\
+Vigas y muros armados                          & 100 & 25 \\
+Columnas                                       & 100 & 25 \\
+Pavimentos y losas                             & 75  & 25 \\
+Hormigón masivo                                & 75  & 25 \\
+\bottomrule
+\end{tabular}%
+}
+\\Fuente: ACI 211.1-22.
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Requisitos por clase de exposición.}
+\label{tab:clase-exposicion}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} c c c l c @{}} 
+\toprule
+\textbf{Clase} & \textbf{W/C máx.} & \textbf{$f'_c$ mín. (MPa)} & \textbf{Requisitos adicionales} & \textbf{Límite de cloruros} \\
+\midrule
+F0 & NA   & 17 & Ninguno                  & --- \\
+F1 & 0.45 & 31 & Ver tabla específica      & --- \\
+F2 & 0.45 & 31 & Ver tabla específica      & --- \\
+F3 & 0.45 & 31 & Ver tabla específica + SCM & --- \\
+S0 & NA   & 17 & Ninguno                  & --- \\
+S1 & 0.50 & 28 & Cemento II (MS)          & --- \\
+S2 & 0.45 & 31 & Cemento V (HS)           & --- \\
+S3 & 0.45 & 31 & V + puzolana o escoria   & --- \\
+C0 & NA   & 17 & ---                      & 1.0 (HA) / 0.06 (HP) \\
+C1 & NA   & 17 & ---                      & 0.3 (HA) / 0.06 (HP) \\
+C2 & 0.40 & 35 & ---                      & 0.15 (HA) / 0.06 (HP) \\
+\bottomrule
+\end{tabular}%
+}
+\\Fuente: ACI 318.
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Relación tipo de estructura – condiciones de exposición y relación W/C.}
+\label{tab:estructura-wc}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\small
+\makebox[\textwidth][c]{%
+\begin{tabular}{@{} l c c c c @{}} 
+\toprule
+\textbf{Tipo de estructura} & \textbf{Hielo-deshielo al aire} & \textbf{Bajo agua dulce} & \textbf{Bajo agua con sulfatos} & \textbf{Clima suave al aire} \\
+\midrule
+Secciones delgadas, poco recubrimiento      & 0.50   & 0.45   & 0.40   & 0.55 \\
+Secciones moderadas                        & 0.55   & 0.50   & 0.45   & 0.55 \\
+Exterior de hormigón simple                 & 0.60   & 0.50   & 0.45   & 0.55 \\
+Hormigonado bajo agua                       & ---    & 0.45   & 0.45   & ---  \\
+Losas sobre el suelo                        & 0.55   & ---    & ---    & ---  \\
+Hormigón protegido a la intemperie          & ver (2)& ---    & ---    & ver (2) \\
+Protegido pero expuesto a hielo-deshielo antes & 0.55 & ---    & ---    & ver (2) \\
+\bottomrule
+\end{tabular}%
+}
+\\Fuente: ACI 318.
+\end{table}
+
+
+
+
+
